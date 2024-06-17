@@ -66,7 +66,7 @@ Nuxt is a free and open-source framework with an intuitive and extendable way to
 
 
 ---
-transition: fade-out
+transition: slide-left
 layout: image-right
 image: assets/framework.jpg
 themeConfig:
