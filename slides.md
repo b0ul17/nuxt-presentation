@@ -112,8 +112,72 @@ A framework is like a structure that provides a base for the application develop
 Here is another comment.
 -->
 
+
 ---
 transition: slide-up
+level: 2
+---
+
+# Project File Structure
+
+
+Nuxt.js offers a clear and well-organized project structure that significantly simplifies managing your Vue.js codebase. This is especially advantageous for larger projects where maintaining an organized codebase can be challenging. Nuxt's structure ensures that your code stays clean and easy to navigate, regardless of the project's complexity.
+
+---
+transition: slide-right
+level: 2
+---
+
+Nuxt includes a file-based routing system that removes the need for manual route configuration in most cases. Rather than manually setting up routes, you simply create specific Vue files for each route within the pages directory. This intuitive and convenient method allows you to easily map your application's structure in a way that directly aligns with your project's file architecture.
+
+---
+transition: slide-down
+level: 2
+---
+
+# Server-Side Rendering
+
+Nuxt offers built-in support for server-side rendering (SSR), meaning your web pages are initially rendered on the server before being sent to the client. This approach has two main advantages.
+
+## Faster Time-to-First-Byte 
+
+First of all, it speeds up page loads considerably. The visible portion of the page can be displayed considerably faster without having to wait for all of the JavaScript to be downloaded and run because the server delivers the browser a completely rendered version of the page.
+This reduces the time needed for the browser to render the initial view, leading to a quicker TTFB.
+
+## SEO
+Second, because search engines can now more effectively crawl and index your information, it significantly improves Search Engine Optimization (SEO). Search engine crawlers can simply read and index the material that has been pre-rendered on the server, which increases the visibility of your website in search engine results. Consequently, Nuxt.js offers a practical and efficient way to improve SEO and speed up page loads.
+
+
+---
+transition: slide-right
+level: 2
+---
+
+# Modular Architecture
+
+Nuxt.js is designed with a modular architecture that promotes reusability, maintainability, and flexibility. This modular approach allows developers to build complex applications with a clear separation of concerns and the ability to easily extend functionality.
+
+## Extensibility
+  Nuxt.js is modular, allowing developers to easily extend and enhance the functionality, integrating plugins and modules for various purposes, such as 
+  authentication (@nuxt/auth), PWA support (@nuxt/pwa), and analytics (@nuxt/google-analytics).
+
+---
+transition: slide-up
+level: 2
+---
+
+
+## Code Splitting
+Built-in code splitting ensures that only the necessary code is loaded for each page, improving performance and user experience.
+
+## Scalability
+
+  The modular architecture supports the growth and evolution of the application. As the application grows, new modules can be added to handle additional features and requirements.
+  This scalability ensures that the application remains performant and manageable even as its complexity increases.
+
+
+---
+transition: slide-left
 level: 2
 ---
 
