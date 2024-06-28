@@ -128,7 +128,32 @@ transition: slide-right
 level: 2
 ---
 
+# File Based routing
+
 Nuxt includes a file-based routing system that removes the need for manual route configuration in most cases. Rather than manually setting up routes, you simply create specific Vue files for each route within the pages directory. This intuitive and convenient method allows you to easily map your application's structure in a way that directly aligns with your project's file architecture.
+
+<div class="flex flex-col gap-4 mt-10">
+<img
+  v-click
+  class="w-[60%]"
+  src="/assets/app.png"
+  alt="nuxt app"
+/>
+
+<img
+  v-click
+  class="w-full"
+  src="/assets/hello-world.png"
+  alt="nuxt app"
+/>
+</div>
+
+
+<!--
+ <NuxtPage> is a wrapper around <RouterView> component from Vue Router.
+
+ Nuxt automatically resolves the name and route by scanning and rendering all Vue component files found in the /pages directory.
+-->
 
 ---
 transition: slide-down
