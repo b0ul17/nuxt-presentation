@@ -123,6 +123,13 @@ level: 2
 
 Nuxt.js offers a clear and well-organized project structure that significantly simplifies managing your Vue.js codebase. This is especially advantageous for larger projects where maintaining an organized codebase can be challenging. Nuxt's structure ensures that your code stays clean and easy to navigate, regardless of the project's complexity.
 
+<img
+  v-click
+  class="mt-15"
+  src="/assets/app.png"
+  alt="nuxt app"
+/>
+
 ---
 transition: slide-right
 level: 2
@@ -132,21 +139,12 @@ level: 2
 
 Nuxt includes a file-based routing system that removes the need for manual route configuration in most cases. Rather than manually setting up routes, you simply create specific Vue files for each route within the pages directory. This intuitive and convenient method allows you to easily map your application's structure in a way that directly aligns with your project's file architecture.
 
-<div class="flex flex-col gap-4 mt-10">
 <img
   v-click
-  class="w-[60%]"
-  src="/assets/app.png"
-  alt="nuxt app"
-/>
-
-<img
-  v-click
-  class="w-full"
+  class="mt-15"
   src="/assets/hello-world.png"
   alt="nuxt app"
 />
-</div>
 
 
 <!--
@@ -162,19 +160,42 @@ level: 2
 
 # Server-Side Rendering
 
-Nuxt offers built-in support for server-side rendering (SSR), meaning your web pages are initially rendered on the server before being sent to the client. This approach has two main advantages.
+Nuxt offers built-in support for server-side rendering (SSR), meaning your web pages are initially rendered on the server before being sent to the client. This approach has some advantages.
 
-## Faster Time-to-First-Byte 
+<ul>
+  <li>
+    <b>Faster initial page load time:</b> Nuxt sends a fully rendered HTML page to the browser, which can be displayed immediately. This can provide a faster perceived page load time and a better user experience (UX), especially on slower networks or devices.
+  </li>
 
-First of all, it speeds up page loads considerably. The visible portion of the page can be displayed considerably faster without having to wait for all of the JavaScript to be downloaded and run because the server delivers the browser a completely rendered version of the page.
-This reduces the time needed for the browser to render the initial view, leading to a quicker TTFB.
+  <li>
+    <b>Improved SEO:</b> search engines can better index SSR pages because the HTML content is available immediately, rather than requiring JavaScript to render the content on the client-side.
+    Better performance on low-powered devices: it reduces the amount of JavaScript that needs to be downloaded and executed on the client-side, which can be beneficial for low-powered devices that may struggle with processing heavy JavaScript applications.
+  </li>
 
-## SEO
-Second, because search engines can now more effectively crawl and index your information, it significantly improves Search Engine Optimization (SEO). Search engine crawlers can simply read and index the material that has been pre-rendered on the server, which increases the visibility of your website in search engine results. Consequently, Nuxt.js offers a practical and efficient way to improve SEO and speed up page loads.
+  <li>
+    <b>Better performance on low-powered devices:</b> it reduces the amount of JavaScript that needs to be downloaded and executed on the client-side, which can be beneficial for low-powered devices that may struggle with processing heavy JavaScript applications.
+  </li>
 
+  <li>
+  <b> Better accessibility:</b> the content is immediately available on the initial page load, improving accessibility for users who rely on screen readers or other assistive technologies.
+  </li>
+
+  <li>
+  <b> Easier caching: </b> pages can be cached on the server-side, which can further improve performance by reducing the amount of time it takes to generate and send the content to the client.
+  </li>
+</ul>
+
+
+<style>
+  li{
+    color: white;
+    font-size:12px;
+    font-weight: 300;
+  }
+</style>
 
 ---
-transition: slide-right
+transition: slide-left
 level: 2
 ---
 
@@ -182,23 +203,57 @@ level: 2
 
 Nuxt.js is designed with a modular architecture that promotes reusability, maintainability, and flexibility. This modular approach allows developers to build complex applications with a clear separation of concerns and the ability to easily extend functionality.
 
-## Extensibility
-  Nuxt.js is modular, allowing developers to easily extend and enhance the functionality, integrating plugins and modules for various purposes, such as 
-  authentication (@nuxt/auth), PWA support (@nuxt/pwa), and analytics (@nuxt/google-analytics).
 
+<img
+  v-click
+  class="mt-5"
+  src="/assets/modules.png"
+  alt="nuxt app"
+/>
+
+---
+transition: slide-left
+level: 2
+---
+
+# Extensibility
+  Nuxt.js is modular, allowing developers to easily extend and enhance the functionality, integrating modules for various purposes, such as 
+  Nuxt Laravel Sanctum authentication (nuxt-auth-sanctum), PWA support (@nuxt/pwa), Pinia Store (@pinia/nuxt).
+
+````md magic-move {lines: true}
+```ts {*|2|*}
+// step 1 
+npm i @pinia/nuxt
+```
+
+```ts {*|4|6}
+// step 2 nuxt.config.ts
+export default defineNuxtConfig({
+    modules: [
+      '@pinia/nuxt',
+      // Load a local module
+      './modules/example',
+    ],
+})
+```
+````
 ---
 transition: slide-up
 level: 2
 ---
 
 
-## Code Splitting
-Built-in code splitting ensures that only the necessary code is loaded for each page, improving performance and user experience.
+# Code Splitting
+Built-in code splitting ensures that only the necessary code is loaded for each page, improving performance and and initial load time of the application.
 
-## Scalability
+---
+transition: slide-left
+level: 2
+---
 
-  The modular architecture supports the growth and evolution of the application. As the application grows, new modules can be added to handle additional features and requirements.
-  This scalability ensures that the application remains performant and manageable even as its complexity increases.
+# Build Fullstack Apps
+
+Nuxt utilizes Nitro an open source framework to build web servers using unjs/h3 and lots of built-in features.
 
 
 ---
