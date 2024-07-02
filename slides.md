@@ -23,12 +23,12 @@ transition: slide-left
 mdc: true
 ---
 
-# To Nuxt or not to Nuxt?
+# Why did the developer choose Nuxt?
 
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer text-white" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
+    Because they needed something Vue-tiful! <carbon:arrow-right class="inline"/>
   </span>
 </div>
 
@@ -143,8 +143,16 @@ Nuxt includes a file-based routing system that removes the need for manual route
   v-click
   class="mt-15"
   src="/assets/hello-world.png"
-  alt="nuxt app"
+  alt="hello world"
 />
+
+<img
+  v-click
+  class="mt-15"
+  src="/assets/id-vue.png"
+  alt="dynamic routing"
+/>
+
 
 
 <!--
@@ -246,6 +254,13 @@ level: 2
 # Code Splitting
 Built-in code splitting ensures that only the necessary code is loaded for each page, improving performance and and initial load time of the application.
 
+<img
+  v-click
+  class="mt-5"
+  src="/assets/chunks.png"
+  alt="code splitting chunks"
+/>
+
 ---
 transition: slide-left
 level: 2
@@ -255,6 +270,12 @@ level: 2
 
 Nuxt utilizes Nitro an open source framework to build web servers using unjs/h3 and lots of built-in features.
 
+<img
+  v-click
+  class="mt-5"
+  src="/assets/nitro.png"
+  alt="nitro server"
+/>
 
 ---
 transition: slide-left
