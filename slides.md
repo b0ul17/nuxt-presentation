@@ -28,7 +28,7 @@ mdc: true
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer text-white" hover="bg-white bg-opacity-10">
-    Because they needed something Vue-tiful! <carbon:arrow-right class="inline"/>
+    Because they needed something truly Vue-tiful! <carbon:arrow-right class="inline"/>
   </span>
 </div>
 
@@ -47,9 +47,52 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
+layout: section
+---
+
+# Who Am I?
+
+---
 transition: slide-up
 level: 2
-layout:center
+layout: two-cols
+---
+
+## Andreas Panopoulos
+<div class="mt-15 text-white">
+ <p v-click><span class="mr-2">👉</span> Academy Tech Lead </p>
+ <p v-click><span class="mr-2">👉</span>  3,5 years in <span class="text-[#9fef00]">Hack The Box</span></p>
+
+
+ <h3 v-click class="mt-5"> Hobbies </h3>
+ <p v-click><span class="mr-2">👉</span> Cycling </p>
+  <p v-click><span class="mr-2">👉</span> Photography</p>
+ <p v-click><span class="mr-2">👉</span> Music</p>
+</div>
+
+::right::
+
+<div  v-click>
+  <img
+    src="/assets/slayer.jpg"
+    alt="slayer"
+  />
+
+  <img
+    src="/assets/editors.jpg"
+    alt="slayer"
+  />
+</div>
+
+ <style>
+  h2 {
+    color: white;
+  }
+</style>
+
+---
+transition: slide-up
+layout: center
 ---
 
 # What is nuxt?
@@ -115,7 +158,7 @@ Here is another comment.
 
 ---
 transition: slide-up
-level: 2
+layout: default-2
 ---
 
 # Project File Structure
@@ -132,7 +175,6 @@ Nuxt.js offers a clear and well-organized project structure that significantly s
 
 ---
 transition: slide-right
-level: 2
 ---
 
 # File Based routing
@@ -163,7 +205,7 @@ Nuxt includes a file-based routing system that removes the need for manual route
 
 ---
 transition: slide-down
-level: 2
+layout: default-5
 ---
 
 # Server-Side Rendering
@@ -204,7 +246,7 @@ Nuxt offers built-in support for server-side rendering (SSR), meaning your web p
 
 ---
 transition: slide-left
-level: 2
+layout: default-4
 ---
 
 # Modular Architecture
@@ -221,7 +263,7 @@ Nuxt.js is designed with a modular architecture that promotes reusability, maint
 
 ---
 transition: slide-left
-level: 2
+layout: default-7
 ---
 
 # Extensibility
@@ -247,7 +289,7 @@ export default defineNuxtConfig({
 ````
 ---
 transition: slide-up
-level: 2
+layout: default-2 
 ---
 
 
