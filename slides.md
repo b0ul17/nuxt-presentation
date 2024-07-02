@@ -72,7 +72,13 @@ layout: two-cols
 
 ::right::
 
-<div  v-click>
+<div  v-click v-motion
+  :initial="{ x: 180 }"
+  :enter="{ x: 0, y: 0 }"
+  :click-1="{ x: 0, y: 30 }"
+  :click-2-4="{ x: 40 }"
+  :leave="{ y: 0, x: 80 }"
+>
   <img
     src="/assets/slayer.jpg"
     alt="slayer"
@@ -417,7 +423,7 @@ Notes can also sync with clicks
 
 [click:3] Last click (skip two clicks)
 -->
-
+ 
 ---
 level: 2
 ---
