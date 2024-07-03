@@ -359,7 +359,7 @@ layout: default-7
 ---
 
 # Extensibility
-  Nuxt.js is modular, allowing developers to easily extend and enhance the functionality, integrating modules for various purposes, such as 
+  Allowing developers to easily extend and enhance the functionality, integrating modules for various purposes, such as 
   Nuxt Laravel Sanctum authentication (nuxt-auth-sanctum), PWA support (@nuxt/pwa), Pinia Store (@pinia/nuxt).
 
 ````md magic-move {lines: true}
@@ -402,7 +402,7 @@ level: 2
 
 # Build Fullstack Apps
 
-Nuxt utilizes Nitro an open source framework to build web servers using unjs/h3.
+Nuxt utilizes Nitro an open source framework to build web servers using unjs/h3
 
 <img
   v-click
