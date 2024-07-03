@@ -402,7 +402,7 @@ level: 2
 
 # Build Fullstack Apps
 
-Nuxt utilizes Nitro an open source framework to build web servers using unjs/h3 and lots of built-in features.
+Nuxt utilizes Nitro an open source framework to build web servers using unjs/h3.
 
 <img
   v-click
