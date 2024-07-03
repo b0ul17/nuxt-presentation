@@ -90,7 +90,7 @@ Because it was outstanding in it's field!
 
 ::right::
 
-<div  v-click v-motion
+<div v-motion
   :initial="{ x: 180 }"
   :enter="{ x: 0, y: 0 }"
   :click-1="{ x: 0, y: 30 }"
@@ -98,14 +98,10 @@ Because it was outstanding in it's field!
   :leave="{ y: 0, x: 80 }"
 >
   <img
-    src="/assets/slayer.jpg"
-    alt="slayer"
+    src="https://media.giphy.com/media/LYKCFkG2vmATCoqJUJ/giphy.gif?cid=790b7611zytwvb0zbp7n1v11stf8jwsvu1sbbyznxs81urat&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+    alt="who is he"
   />
 
-  <img
-    src="/assets/editors.jpg"
-    alt="editors"
-  />
 </div>
 
  <style>
