@@ -209,7 +209,7 @@ const double = computed(() => count.value * 2)
 ```vue {*|4}
 // example 2
 <script setup lang="ts">
-/* useAsyncData() and $fetch() are auto-imported */
+/* useFetch is auto-imported */
 const { data, refresh, pending } = await useFetch('/api/hello')
 </script>
 ```
