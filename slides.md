@@ -73,18 +73,21 @@ layout: two-cols
  </div>
 </div>
 
+
+
+
+ 
 <div v-click >
-```ts {1,2}
-'Εξυπνος έλληνας τραγουδιστής
-Τσακαλίκης
-```
+
+> 'Εξυπνος έλληνας τραγουδιστής <br> Τσακαλίκης 
+
 </div>
 
-<div v-click >
-```ts {1,2}
-Why did the scarecrow got an award.
+<div v-click class="mt-2">
+
+> Why did the scarecrow got an award. <br>
 Because it was outstanding in it's field!
-```
+
 </div> 
 
 
