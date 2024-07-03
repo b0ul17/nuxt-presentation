@@ -64,7 +64,7 @@ layout: two-cols
  <p><span class="mr-2">👉</span>  3,5 years in <span class="text-[#9fef00]">Hack The Box</span></p>
 
 
- <h3  class="mt-5"> "Hobbies" </h3>
+ <h3  class="mt-5"> "What I Love to Do" </h3>
  <div v-click>
  <p><span class="mr-2">👉</span> Cycling </p>
   <p><span class="mr-2">👉</span> Photography</p>
