@@ -60,15 +60,33 @@ layout: two-cols
 
 ## Andreas Panopoulos
 <div class="mt-15 text-white">
- <p v-click><span class="mr-2">👉</span> Academy Tech Lead </p>
- <p v-click><span class="mr-2">👉</span>  3,5 years in <span class="text-[#9fef00]">Hack The Box</span></p>
+ <p><span class="mr-2">👉</span> Academy Tech Lead </p>
+ <p><span class="mr-2">👉</span>  3,5 years in <span class="text-[#9fef00]">Hack The Box</span></p>
 
 
- <h3 v-click class="mt-5"> Hobbies </h3>
- <p v-click><span class="mr-2">👉</span> Cycling </p>
-  <p v-click><span class="mr-2">👉</span> Photography</p>
- <p v-click><span class="mr-2">👉</span> Music</p>
+ <h3  class="mt-5"> "Hobbies" </h3>
+ <div v-click>
+ <p><span class="mr-2">👉</span> Cycling </p>
+  <p><span class="mr-2">👉</span> Photography</p>
+ <p><span class="mr-2">👉</span> Music</p>
+ <p><span class="mr-2">👉</span> Punjokes</p>
+ </div>
 </div>
+
+<div v-click >
+```ts {1,2}
+'Εξυπνος έλληνας τραγουδιστής
+Τσακαλίκης
+```
+</div>
+
+<div v-click >
+```ts {1,2}
+Why did the scarecrow got an award.
+Because it was outstanding in it's field!
+```
+</div> 
+
 
 ::right::
 
@@ -86,7 +104,7 @@ layout: two-cols
 
   <img
     src="/assets/editors.jpg"
-    alt="slayer"
+    alt="editors"
   />
 </div>
 
@@ -98,10 +116,15 @@ layout: two-cols
 
 ---
 transition: slide-up
-layout: center
+layout: section
 ---
 
 # What is nuxt?
+
+---
+transition: slide-down
+layout: center
+---
 
 Nuxt is a free and open-source framework with an intuitive and extendable way to create type-safe, performant and production-grade full-stack web applications and websites with Vue.js
  [learn more](https://nuxt.com/)
@@ -112,54 +135,6 @@ Nuxt is a free and open-source framework with an intuitive and extendable way to
     color: #9fef00;
   }
 </style>
-
-
----
-transition: slide-left
-layout: image-right
-image: assets/framework.jpg
-themeConfig:
-  primary-highlight: #9fef00
-  secondary-highlight: #161C2C
----
-
-# What is a framework?
-
-A framework is like a structure that provides a base for the application development process.
-\
- With the help of a framework, you can avoid writing everything from scratch. 
- \
- Frameworks provide a set of tools and elements that help in the speedy development process.
-\
- It acts like a template that can be used and even modified to meet the project requirements.
-
-
-
-<div class="flex gap-10 items-center mt-15">
-  <img
-  v-click
-  class=""
-  src="/assets/laravel.svg"
-  alt="laravel logo"
-/>
-
-<img
-  v-click
-  class="max-w-[110px]"
-  src="/assets/django-logo.png"
-  alt="django logo"
-/>
-
-<img
-  v-click
-  class="max-w-[110px]"
-  src="/assets/nest.svg"
-  alt="nest logo"
-/>
-</div>
-<!--
-Here is another comment.
--->
 
 
 ---
@@ -210,36 +185,62 @@ Nuxt includes a file-based routing system that removes the need for manual route
 -->
 
 ---
+transition: slide-left
+---
+
+# Auto-imports
+
+Nuxt.js simplifies the development process with auto-importing feature. 
+This feature automatically imports components, composables, and utilities, helper functions and Vue APIs, reducing the need for repetitive import statements and allowing developers to focus more on building functionality.
+
+<div class="mt-20">
+
+
+````md magic-move {lines: true}
+```vue {*|4-5}
+// example 1 
+<script setup lang="ts">
+/* ref() and computed() are auto-imported */
+const count = ref(1)
+const double = computed(() => count.value * 2)
+</script>
+```
+
+```vue {*|4}
+// example 2
+<script setup lang="ts">
+/* useAsyncData() and $fetch() are auto-imported */
+const { data, refresh, pending } = await useFetch('/api/hello')
+</script>
+```
+````
+</div>
+<div v-click class="mt-5">
+```ts
+// nuxt.config.ts
+export default defineNuxtConfig({
+  imports: {
+    autoImport: false
+  }
+})
+```
+</div>
+
+---
 transition: slide-down
 layout: default-5
 ---
-
 # Server-Side Rendering
 
-Nuxt offers built-in support for server-side rendering (SSR), meaning your web pages are initially rendered on the server before being sent to the client. This approach has some advantages.
+Benefits of server-side rendering:
 
-<ul>
-  <li>
-    <b>Faster initial page load time:</b> Nuxt sends a fully rendered HTML page to the browser, which can be displayed immediately. This can provide a faster perceived page load time and a better user experience (UX), especially on slower networks or devices.
-  </li>
+-   Faster initial page load time: Nuxt sends a fully rendered HTML page to the browser, which can be displayed immediately. This can provide a faster perceived page load time and a better user experience (UX), especially on slower networks or devices.
+-   Improved SEO: search engines can better index SSR pages because the HTML content is available immediately, rather than requiring JavaScript to render the content on the client-side.
+-   Better performance on low-powered devices: it reduces the amount of JavaScript that needs to be downloaded and executed on the client-side, which can be beneficial for low-powered devices that may struggle with processing heavy JavaScript applications.
+-   Better accessibility: the content is immediately available on the initial page load, improving accessibility for users who rely on screen readers or other assistive technologies.
+-   Easier caching: pages can be cached on the server-side, which can further improve performance by reducing the amount of time it takes to generate and send the content to the client.
 
-  <li>
-    <b>Improved SEO:</b> search engines can better index SSR pages because the HTML content is available immediately, rather than requiring JavaScript to render the content on the client-side.
-    Better performance on low-powered devices: it reduces the amount of JavaScript that needs to be downloaded and executed on the client-side, which can be beneficial for low-powered devices that may struggle with processing heavy JavaScript applications.
-  </li>
-
-  <li>
-    <b>Better performance on low-powered devices:</b> it reduces the amount of JavaScript that needs to be downloaded and executed on the client-side, which can be beneficial for low-powered devices that may struggle with processing heavy JavaScript applications.
-  </li>
-
-  <li>
-  <b> Better accessibility:</b> the content is immediately available on the initial page load, improving accessibility for users who rely on screen readers or other assistive technologies.
-  </li>
-
-  <li>
-  <b> Easier caching: </b> pages can be cached on the server-side, which can further improve performance by reducing the amount of time it takes to generate and send the content to the client.
-  </li>
-</ul>
+Overall, server-side rendering can provide a faster and more efficient user experience, as well as improve search engine optimization and accessibility.
 
 
 <style>
@@ -247,6 +248,92 @@ Nuxt offers built-in support for server-side rendering (SSR), meaning your web p
     color: white;
     font-size:12px;
     font-weight: 300;
+  }
+</style>
+
+
+---
+transition: slide-up
+layout: default-5
+---
+
+Downsides of server-side rendering:
+
+-   Development constraints: Server and browser environments don't provide the same APIs, and it can be tricky to write code that can run on both sides seamlessly. Fortunately, Nuxt provides guidelines and specific variables to help you determine where a piece of code is executed.
+-   Cost: A server needs to be running in order to render pages on the fly. This adds a monthly cost like any traditional server. However, the server calls are highly reduced thanks to universal rendering with the browser taking over on client-side navigation. A cost reduction is possible by leveraging [edge-side-rendering](https://nuxt.com/docs/guide/concepts/rendering#edge-side-rendering).
+
+
+The current platforms where you can leverage ESR are:
+
+-   [Cloudflare Pages](https://pages.cloudflare.com/) with zero configuration using the git integration and the `nuxt build` command
+-   [Vercel Edge Functions](https://vercel.com/features/edge-functions) using the `nuxt build` command and `NITRO_PRESET=vercel-edge` environment variable
+-   [Netlify Edge Functions](https://www.netlify.com/products/#netlify-edge-functions) using the `nuxt build` command and `NITRO_PRESET=netlify-edge` environment variable
+
+
+
+
+<style>
+  li{
+    color: white;
+    font-size:12px;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+</style>
+
+
+---
+transition: slide-down
+layout: default-4
+---
+# Client-Side Rendering
+
+Benefits of client-side rendering:
+
+-   Development speed: When working entirely on the client-side, we don't have to worry about the server compatibility of the code, for example, by using browser-only APIs like the `window` object.
+-   Cheaper: Running a server adds a cost of infrastructure as you would need to run on a platform that supports JavaScript. We can host Client-only applications on any static server with HTML, CSS, and JavaScript files. 
+
+
+
+<style>
+  li{
+    color: white;
+    font-size:12px;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+</style>
+
+
+---
+transition: slide-up
+layout: default-4
+---
+
+Downsides of client-side rendering:
+
+-   Performance: The user has to wait for the browser to download, parse and run JavaScript files. Depending on the network for the download part and the user's device for the parsing and execution, this can take some time and impact the user's experience.
+-   Search Engine Optimization: Indexing and updating the content delivered via client-side rendering takes more time than with a server-rendered HTML document. This is related to the performance drawback we discussed, as search engine crawlers won't wait for the interface to be fully rendered on their first try to index the page. Your content will take more time to show and update in search results pages with pure client-side rendering.
+
+
+You can enable client-side only rendering with Nuxt in your nuxt.config.ts
+
+<div v-click>
+```ts
+export default defineNuxtConfig({
+  ssr: false
+})
+
+```
+</div>
+
+
+<style>
+  li{
+    color: white;
+    font-size:12px;
+    font-weight: 300;
+    margin-bottom: 20px;
   }
 </style>
 
@@ -325,556 +412,10 @@ Nuxt utilizes Nitro an open source framework to build web servers using unjs/h3 
   alt="nitro server"
 />
 
----
-transition: slide-left
-level: 2
----
 
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
-
-## Keyboard Shortcuts
-
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
-
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
 
 ---
-layout: two-cols
-layoutClass: gap-16
+layout: section
 ---
 
-# Table of contents
-
-You can use the `Toc` component to generate a table of contents for your slides:
-
-```html
-<Toc minDepth="1" maxDepth="1"></Toc>
-```
-
-The title will be inferred from your slide content, or you can override it with `title` and `level` in your frontmatter.
-
-::right::
-
-<Toc v-click minDepth="1" maxDepth="2"></Toc>
-
----
-layout: image-right
-image: https://cover.sli.dev
----
-
-# Code
-
-Use code snippets and get the highlighting directly, and even types hover![^1]
-
-```ts {all|5|7|7-8|10|all} twoslash
-// TwoSlash enables TypeScript hover information
-// and errors in markdown code blocks
-// More at https://shiki.style/packages/twoslash
-
-import { computed, ref } from 'vue'
-
-const count = ref(0)
-const doubled = computed(() => count.value * 2)
-
-doubled.value = 2
-```
-
-<arrow v-click="[4, 5]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" />
-
-<!-- This allow you to embed external code blocks -->
-<<< @/snippets/external.ts#snippet
-
-<!-- Footer -->
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
-<!-- Inline style -->
-<style>
-.footnotes-sep {
-  @apply mt-5 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
-<!--
-Notes can also sync with clicks
-
-[click] This will be highlighted after the first click
-
-[click] Highlighted with `count = ref(0)`
-
-[click:3] Last click (skip two clicks)
--->
- 
----
-level: 2
----
-
-# Shiki Magic Move
-
-Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
-
-Add multiple code blocks and wrap them with <code>````md magic-move</code> (four backticks) to enable the magic move. For example:
-
-````md magic-move {lines: true}
-```ts {*|2|*}
-// step 1
-const author = reactive({
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-})
-```
-
-```ts {*|1-2|3-4|3-4,8}
-// step 2
-export default {
-  data() {
-    return {
-      author: {
-        name: 'John Doe',
-        books: [
-          'Vue 2 - Advanced Guide',
-          'Vue 3 - Basic Guide',
-          'Vue 4 - The Mystery'
-        ]
-      }
-    }
-  }
-}
-```
-
-```ts
-// step 3
-export default {
-  data: () => ({
-    author: {
-      name: 'John Doe',
-      books: [
-        'Vue 2 - Advanced Guide',
-        'Vue 3 - Basic Guide',
-        'Vue 4 - The Mystery'
-      ]
-    }
-  })
-}
-```
-
-Non-code blocks are ignored.
-
-```vue
-<!-- step 4 -->
-<script setup>
-const author = {
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-}
-</script>
-```
-````
-
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true" alt="">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true" alt="">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-
-# Clicks Animations
-
-You can add `v-click` to elements to add a click animation.
-
-<div v-click>
-
-This shows up when you click the slide:
-
-```html
-<div v-click>This shows up when you click the slide.</div>
-```
-
-</div>
-
-<br>
-
-<v-click>
-
-The <span v-mark.red="3"><code>v-mark</code> directive</span>
-also allows you to add
-<span v-mark.circle.orange="4">inline marks</span>
-, powered by [Rough Notation](https://roughnotation.com/):
-
-```html
-<span v-mark.underline.orange>inline markers</span>
-```
-
-</v-click>
-
-<div mt-20 v-click>
-
-[Learn More](https://sli.dev/guide/animations#click-animations)
-
-</div>
-
----
-
-# Motions
-
-Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), triggered by `v-motion` directive.
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }"
-  :click-3="{ x: 80 }"
-  :leave="{ x: 1000 }"
->
-  Slidev
-</div>
-```
-
-<div class="w-60 relative">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-square.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-circle.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-triangle.png"
-      alt=""
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 30, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
-
----
-
-# LaTeX
-
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
-
-<br>
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$ {1|3|all}
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
-
-```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectiveness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
-</div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
----
-foo: bar
-dragPos:
-  square: 691,32,167,_,-16
----
-
-# Draggable Elements
-
-Double-click on the draggable elements to edit their positions.
-
-<br>
-
-###### Directive Usage
-
-```md
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-```
-
-<br>
-
-###### Component Usage
-
-```md
-<v-drag text-3xl>
-  <carbon:arrow-up />
-  Use the `v-drag` component to have a draggable container!
-</v-drag>
-```
-
-<v-drag pos="544,346,261,_,-15">
-  <div text-center text-3xl border border-main rounded>
-    Double-click me!
-  </div>
-</v-drag>
-
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-
-###### Draggable Arrow
-
-```md
-<v-drag-arrow two-way />
-```
-
-<v-drag-arrow pos="67,452,253,46" two-way op70 />
-
----
-src: ./pages/multiple-entries.md
-hide: false
----
-
----
-
-# Monaco Editor
-
-Slidev provides built-in Monaco Editor support.
-
-Add `{monaco}` to the code block to turn it into an editor:
-
-```ts {monaco}
-import { ref } from 'vue'
-import { emptyArray } from './external'
-
-const arr = ref(emptyArray(10))
-```
-
-Use `{monaco-run}` to create an editor that can execute the code directly in the slide:
-
-```ts {monaco-run}
-import { version } from 'vue'
-import { emptyArray, sayHello } from './external'
-
-sayHello()
-console.log(`vue ${version}`)
-console.log(emptyArray<number>(10).reduce(fib => [...fib, fib.at(-1)! + fib.at(-2)!], [1, 1]))
-```
-
----
-layout: center
-class: text-center
----
-
-# Learn More
-
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+# Questions
