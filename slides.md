@@ -2,7 +2,7 @@
 # try also 'default' to start simple
 theme: ./theme
 # some information about your slides, markdown enabled
-title: To Nuxt or not to Nuxt
+title: Why did the developer choose Nuxt?
 favicon: '/assets/favicon.ico'
 titleTemplate: '%s - Nuxt'
 info: |
