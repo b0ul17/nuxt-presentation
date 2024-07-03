@@ -415,7 +415,7 @@ Nuxt utilizes Nitro an open source framework to build web servers using unjs/h3 
 
 
 ---
-layout: section
+layout: section-3
 ---
 
 # Questions
