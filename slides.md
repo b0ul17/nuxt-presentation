@@ -360,7 +360,7 @@ layout: default-7
   Nuxt Laravel Sanctum authentication (nuxt-auth-sanctum), PWA support (@nuxt/pwa), Pinia Store (@pinia/nuxt).
 
 ````md magic-move {lines: true}
-```ts {*|2|*}
+```ts {*|2}
 // step 1 
 npm i @pinia/nuxt
 ```
