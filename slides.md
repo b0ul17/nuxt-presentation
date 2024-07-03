@@ -250,7 +250,7 @@ Overall, server-side rendering can provide a faster and more efficient user expe
 
 ---
 transition: slide-up
-layout: default-5
+layout: default-6
 ---
 
 Downsides of server-side rendering:
@@ -303,7 +303,7 @@ Benefits of client-side rendering:
 
 ---
 transition: slide-up
-layout: default-4
+layout: default-3
 ---
 
 Downsides of client-side rendering:
