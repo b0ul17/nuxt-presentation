@@ -422,7 +422,7 @@ layout: default-2
 
 
 # Code Splitting
-Built-in code splitting ensures that only the necessary code is loaded for each page, improving performance and and initial load time of the application.
+Built-in code splitting ensures that only the necessary code is loaded for each page, improving performance and initial load time of the application.
 
 <img
   v-click
@@ -444,7 +444,7 @@ level: 2
 
 # Build Fullstack Apps
 
-Nuxt utilizes Nitro an open source framework to build web servers using unjs/h3
+Nuxt utilizes Nitro, an open source framework to build web servers using unjs/h3
 
 <img
   v-click
