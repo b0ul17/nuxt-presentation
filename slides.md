@@ -42,10 +42,6 @@ mdc: true
   </a>
 </div>
 
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
-
 ---
 layout: section
 ---
@@ -135,6 +131,9 @@ Nuxt is a free and open-source framework with an intuitive and extendable way to
   }
 </style>
 
+<!--
+Το nuxt είναι ένα open source framework που σκοπό έχει να κάνει το developing process εύκολο και ευχάριστο.
+-->
 
 ---
 transition: slide-up
@@ -152,6 +151,11 @@ Nuxt.js offers a clear and well-organized project structure that significantly s
   src="/assets/app.png"
   alt="nuxt app"
 />
+
+
+<!--
+ Έχει ένα οργανωμένο file structure που βοηθάει στο να συντηρήσεις ένα καλά οργανωμένο και καθαρό codebase όσο μεγάλο και περίπλοκο και αν είναι το project.
+-->
 
 ---
 transition: slide-right
@@ -181,6 +185,9 @@ Nuxt includes a file-based routing system that removes the need for manual route
  <NuxtPage> is a wrapper around <RouterView> component from Vue Router.
 
  Nuxt automatically resolves the name and route by scanning and rendering all Vue component files found in the /pages directory.
+
+ Αυτόματα δημιουγεί τα routes σκανάρωντας τα αρχεία που είναι στον φάκελο pages.
+ Υποστιρίζει δυναμικές σελίδες, δημιουργώντας ένα αρχείο τύπου [id].vue και αντίστοιχα στην σελίδα αυτήν μπορείς να διαβάσεις την παράμετρο του url.
 -->
 
 ---
@@ -225,6 +232,12 @@ export default defineNuxtConfig({
 ```
 </div>
 
+<!--
+ Ακολουθώντας τα rules για το file structure κάνει auto import, composables, components, helpers καθώς επίσης και το VueAP αφαιρώντας από τον developer έναν έξτρα φόρτο των import.
+
+ Μπορείς αν θες να απενεργοποιήσεις το auto import feature
+-->
+
 ---
 transition: slide-down
 layout: default-5
@@ -250,6 +263,14 @@ Overall, server-side rendering can provide a faster and more efficient user expe
   }
 </style>
 
+
+<!--
+ Faster initial load, καθώς το nuxt στέλνει μία φουλ ρενταρισμένη html σελίδα στον browser.
+
+ Better performance σε συσκευές μικρής δυναμικότητας καθώς μειώνει τον όγκο των δεδομένων που πρέπει να κατεβούν και να εκτελεστούν στην πλευρά του χρήστη
+
+ Καλύτερο accessibility, καθώς το περιεχόμενο είναι απευθείας διαθέσιμο με το άνοιγμα της σελίδας.
+-->
 
 ---
 transition: slide-up
@@ -281,6 +302,12 @@ The current platforms where you can leverage ESR are:
 </style>
 
 
+<!--
+Ο server και ο browser δεν υποστιρίζουν τα ίδια api έτσι θέλει προσοχή ο κώδικας να μπορεί να εκτελεστεί και στις δύο πλευρές.
+
+Κόστος, γιατί χρειάζεται έναν σέρβερ για να κάνει render τις σελίδες on the fly
+-->
+
 ---
 transition: slide-down
 layout: default-4
@@ -303,6 +330,10 @@ Benefits of client-side rendering:
   }
 </style>
 
+<!--
+ Όσον αφορά το evelopment  δεν χρειάζεται να ανησυχείς για την συμβατότητα του κώδικα μεταξύ σέρβερ και browser παράδειγμα την χρήση του window object
+ -->
+
 
 ---
 transition: slide-up
@@ -322,7 +353,6 @@ You can enable client-side only rendering with Nuxt in your nuxt.config.ts
 export default defineNuxtConfig({
   ssr: false
 })
-
 ```
 </div>
 
@@ -336,6 +366,12 @@ export default defineNuxtConfig({
   }
 </style>
 
+
+<!--
+ Από πλευράς απόδοσης πρέπει να περιμένει ο χρήστης να κατέβουν  και να ρενταριστούν τα javascript files πρωτού δει το περιεχόμενο.
+
+ Δεν έχεις καλό SEO
+ -->
 ---
 transition: slide-left
 layout: default-4
@@ -394,6 +430,12 @@ Built-in code splitting ensures that only the necessary code is loaded for each 
   src="/assets/chunks.png"
   alt="code splitting chunks"
 />
+
+
+<!--
+ Κατά την διάρκεια του build χωρίζει τον κώδικα σε μικρότερα μέρη, βελτιώνοντας τον χρόνο για το initial load της εφαρμογής
+ -->
+
 
 ---
 transition: slide-left
